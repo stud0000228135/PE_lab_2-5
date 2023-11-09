@@ -3,3 +3,4 @@ sentencepiece
 streamlit
 tokenizer
 sacremoses
+touch
