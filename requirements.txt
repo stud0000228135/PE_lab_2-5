@@ -1,6 +1,4 @@
 transformers
 sentencepiece
 streamlit
-tokenizer
-sacremoses
 torch
