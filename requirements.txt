@@ -3,4 +3,4 @@ sentencepiece
 streamlit
 tokenizer
 sacremoses
-tensorflow
+torch
