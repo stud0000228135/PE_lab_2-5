@@ -2,3 +2,4 @@ transformers
 sentencepiece
 streamlit
 torch
+sacremoses
