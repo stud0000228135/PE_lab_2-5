@@ -1,5 +1,3 @@
-# Установка необходимых библиотек
-!pip install streamlit transformers sentencepiece
 
 # Импорт библиотек
 import streamlit as st
