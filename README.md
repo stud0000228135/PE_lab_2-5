@@ -5,6 +5,8 @@ Model of Machine Learning.
 
 Ссылка на модель на HuggingFace: https://huggingface.co/Helsinki-NLP/opus-mt-ru-en
 
+Ссылка на Streanlit: https://pelab2-5-ptmprbveenhzzf9hil8f9p.streamlit.app/
+
 Состав команды: 
 1. Акимцев
 2. Колегов
