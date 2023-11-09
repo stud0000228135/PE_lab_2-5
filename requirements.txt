@@ -2,3 +2,5 @@ transformers
 sentencepiece
 streamlit
 pyexpat
+tokenizer
+sacremoses
