@@ -8,13 +8,6 @@ translator = pipeline("translation", model="Helsinki-NLP/opus-mt-ru-en")
 # Загрузка токенизатора для машинного перевода
 tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-ru-en")
 
-# Функция для машинного перевода
-def translate_text(text):
-    inputs = tokenizer(text, return_tensors="pt", truncation=True)
-    outputs = model.generate(**inputs)
-    translated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    return translated_text
-
 # Стартовая страница Streamlit
 st.title("Перевод тескста")
 
