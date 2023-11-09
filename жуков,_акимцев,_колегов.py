@@ -9,7 +9,7 @@ translator = pipeline("translation", model="Helsinki-NLP/opus-mt-ru-en")
 tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-ru-en")
 
 # Стартовая страница Streamlit
-st.title("Перевод тескста")
+st.title("Перевод текста с русского на английский")
 
 # Элемент управления для ввода текста
 user_text = st.text_area("Введите текст:")
