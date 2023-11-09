@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1oxuUJRMSzbJ80LoZpB4kcTU9eA6-viZi
 """
 
-
+st.title('dgdh')
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
 
 tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-ru-en")
