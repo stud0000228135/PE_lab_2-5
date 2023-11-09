@@ -8,12 +8,6 @@ Original file is located at
 """
 
 !pip install transformers
-
-from transformers import pipeline
-classifier = pipeline("sentiment-analysis",
- "blanchefort/rubert-base-cased-sentiment")
-classifier("Я обожаю инженерию машинного обучения!")
-
 !pip install sentencepiece
 
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
