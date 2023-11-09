@@ -7,6 +7,12 @@ Original file is located at
     https://colab.research.google.com/drive/1oxuUJRMSzbJ80LoZpB4kcTU9eA6-viZi
 """
 
+!pip install transformers
+
+from transformers import pipeline
+classifier = pipeline("sentiment-analysis",
+ "blanchefort/rubert-base-cased-sentiment")
+classifier("Я обожаю инженерию машинного обучения!")
 
 !pip install sentencepiece
 
