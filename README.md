@@ -11,3 +11,4 @@ Model of Machine Learning.
 1. Акимцев
 2. Колегов
 3. Жуков
+![image](https://github.com/stud0000228135/PE_lab_2-5/assets/125552026/f23acb83-0c08-4bc5-9603-807e6f08479d)
