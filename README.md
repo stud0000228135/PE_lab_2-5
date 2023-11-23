@@ -5,9 +5,9 @@
 Ссылка на модель на HuggingFace: https://huggingface.co/Helsinki-NLP/opus-mt-ru-en
 
 Состав команды: 
-1. Акимцев
-2. Колегов
-3. Жуков
+1. Акимцев Алексей
+2. Колегов Евгений
+3. Жуков Дмитрий
 
 # Streamlit
 
