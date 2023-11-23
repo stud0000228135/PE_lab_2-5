@@ -13,7 +13,8 @@
 
 Ссылка на Streanlit: https://pelab2-5-ptmprbveenhzzf9hil8f9p.streamlit.app/
 
-![image](https://github.com/stud0000228135/PE_lab_2-5/assets/125552026/0bebf5b5-975d-40fa-a683-f3b004176b12)
+![image](https://github.com/stud0000228135/PE_lab_2-5/assets/125552026/744c7ae6-8896-4ed2-8775-f9aef95165c3)
+
 
 # FastAPI
 
