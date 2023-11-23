@@ -3,3 +3,6 @@ sentencepiece
 streamlit
 torch
 sacremoses
+fastapi
+fastapi.responses
+pydantic
