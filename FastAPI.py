@@ -1,20 +1,26 @@
-from pyexpat import model
-import streamlit as st
-from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel
+from transformers import pipeline
+
+app = FastAPI()
 
 # Загрузка модели для машинного перевода
 translator = pipeline("translation", model="Helsinki-NLP/opus-mt-ru-en")
 
-# Загрузка токенизатора для машинного перевода
-tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-ru-en")
+# Модель данных для запроса
+class TranslationRequest(BaseModel):
+    text: str
 
-# Стартовая страница Streamlit
-st.title("Перевод текста с русского на английский")
+# Модель данных для ответа
+class TranslationResponse(BaseModel):
+    translation: str
 
-# Элемент управления для ввода текста
-user_text = st.text_area("Введите текст:")
-
-# Элемент управления для машинного перевода
-if st.button("Перевести текст"):
-    x = translator(user_text)[0].get('translation_text')
-    st.write(f"Результат перевода: {x}")
+# Эндпоинт для машинного перевода
+@app.post("/translate", response_model=TranslationResponse)
+async def translate(request: TranslationRequest):
+    try:
+        translated_text = translator(request.text)[0].get('translation_text')
+        return {"translation": translated_text}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Internal Server Error")
