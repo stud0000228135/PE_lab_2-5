@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install --upgrade pip
-        pip install pytorch
+        pip install torch==1.9.1+cpu torchvision==0.10.1+cpu torchaudio==0.9.1+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
         pip install -r requirements.txt
 
     - name: Run tests
