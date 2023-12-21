@@ -1,3 +1,10 @@
+import pytest
+from fastapi.testclient import TestClient
+from main import app
+
+# Создаем экземпляр TestClient перед использованием
+client = TestClient(app)
+
 def test_translate_english_to_russian():
     # Отправляем текст на английском для перевода
     response = client.post("/translate", json={"text": "Hello, world!"})
