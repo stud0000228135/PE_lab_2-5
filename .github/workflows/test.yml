@@ -1,12 +1,12 @@
-name: Run Tests
+name: CI
 
 on:
   push:
     branches:
-      - main
+      - main  # Укажите вашу основную ветку
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,12 +16,12 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.x
+        python-version: 3.8  # Укажите вашу версию Python
 
     - name: Install dependencies
       run: |
+        pip install torch==1.10.0+cpu torchvision==0.11.1+cpu torchaudio==0.10.0+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
         pip install -r requirements.txt
 
     - name: Run tests
-      run: |
-        pytest
+      run: pytest
