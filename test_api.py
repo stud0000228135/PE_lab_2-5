@@ -23,4 +23,6 @@ def contains_russian_letters(text):
     def is_cyrillic(char):
         return 'а' <= char.lower() <= 'я' or char.lower() == 'ё'
     
+    # Проверяем, содержит ли текст хотя бы одну русскую букву
     return any(is_cyrillic(char) for char in text)
+
