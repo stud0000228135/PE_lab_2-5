@@ -1,7 +1,7 @@
 transformers==4.36.2
 sentencepiece==0.1.99
 streamlit==1.29.0
-torch==1.10.0
+torch==1.9.1+cpu
 sacremoses==0.0.46
 fastapi==0.68.0
 pydantic==1.10.0
