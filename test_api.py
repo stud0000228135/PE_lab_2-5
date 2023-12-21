@@ -2,7 +2,7 @@ import pytest
 from httpx import AsyncClient
 from FastAPI import app
 
-client = TestClient(app)
+client = FastAPI(app)
 
 def test_health_check():
     response = client.get("/translate")
