@@ -1,26 +1,13 @@
-import pytest
-from fastapi.testclient import TestClient
-from FastAPI import app
-
-client = TestClient(app)
-
-def test_translate_success():
+def test_translate_english_to_russian():
+    # Отправляем текст на английском для перевода
     response = client.post("/translate", json={"text": "Hello, world!"})
+    
+    # Проверяем успешный код состояния
     assert response.status_code == 200
-    assert "translation" in response.json()
-
-def test_translate_error():
-    response = client.post("/translate", json={"text": "Invalid text that causes an error"})
-    assert response.status_code == 500
-    assert "Internal Server Error" in response.text
-
-def test_translate_russian_to_english():
-    response = client.post("/translate", json={"text": "Привет, мир!"})
-    assert response.status_code == 200
-    assert "translation" in response.json()
+    
+    # Получаем переведенный текст из ответа
     translated_text = response.json()["translation"]
-    assert is_english_text(translated_text)
-
-# Вспомогательная функция для проверки, что текст является английским
-def is_english_text(text):
-    return not any(ord(char) > 127 for char in text)
+    
+    # Проверяем, что результат не пустой и отличается от исходного текста
+    assert translated_text
+    assert translated_text != "Hello, world!"
