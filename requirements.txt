@@ -6,6 +6,6 @@ sacremoses
 fastapi
 pydantic
 uvicorn
-fastapi
 httpx
 pytest
+
