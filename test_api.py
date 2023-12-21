@@ -2,7 +2,6 @@ import pytest
 from fastapi.testclient import TestClient
 from FastAPI import app
 
-# Создаем экземпляр TestClient перед использованием
 client = TestClient(app)
 
 def test_translate_english_to_russian():
@@ -15,6 +14,13 @@ def test_translate_english_to_russian():
     # Получаем переведенный текст из ответа
     translated_text = response.json()["translation"]
     
-    # Проверяем, что результат не пустой и отличается от исходного текста
+    # Проверяем, что результат не пустой и содержит русские буквы
     assert translated_text
-    assert translated_text != "Hello, world!"
+    assert contains_russian_letters(translated_text)
+
+def contains_russian_letters(text):
+    # Является ли символ кириллическим
+    def is_cyrillic(char):
+        return 'а' <= char.lower() <= 'я' or char.lower() == 'ё'
+    
+    return any(is_cyrillic(char) for char in text)
