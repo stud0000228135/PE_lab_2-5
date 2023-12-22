@@ -1,11 +1,9 @@
-import pytest
-from httpx import AsyncClient
+from fastapi.testclient import TestClient
 from FastAPI import app
 
-client = FastAPI(app)
+client = TestClient(app)
 
-def test_health_check():
-    response = client.get("/translate")
+def test_translate_endpoint():
+    response = client.post("/translate", json={"text": "Привет, мир!"})
     assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
-
+    assert response.json() == {'translation': 'Hey, world!'}
